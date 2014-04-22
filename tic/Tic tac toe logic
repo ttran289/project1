@@ -1,0 +1,72 @@
+            273                 84
+              \               /
+                1 |   2 |   4  = 7
+             -----+-----+-----
+                8 |  16 |  32  = 56
+             -----+-----+-----
+               64 | 128 | 256  = 448
+     
+               73   146   292
+     win [7,56,448,73,146,292,273,84]
+
+Determine the winner by adding up their selection.
+Run their "SUM" thru the winning array to find a match.
+If "SUM" of a user match a number in the winning array => Game Over
+
+Variables needed?
+var user1
+var user2
+var gamefunction to loop through the user' "Sum" to compare with the winning array
+var reset
+     
+
+Determine whose turns
+	var = turnNum = 0
+	var altTurn = function(){
+	 if (turnNum% 2 ===0){
+	mark = “X”;
+	}else{
+	mark =“O”;
+	}
+	num +=1;
+	}
+ 
+
+Check if a tile empty
+  click + place number
+	on click = click
+	var click = function(){
+	board[this.id] = X;
+	this.innerHTML = X;
+	
+	}
+
+Win conditions
+  determine who win
+  determine a tie
+$watch = keep score?
+
+setTimeout???
+
+$watch event to keep track of scores :
+example!!!
+app.controller('MainCtrl', function($scope) {
+  $http://scope.name = "Marc";
+  $scope.name2 = "Wright";
+  
+  //WHY IS THIS STARTING AT -1?
+  $scope.updated = -1;
+  
+  $scope.$watch('name', function() {
+  $scope.updated++;    
+  console.log($scope.updated + "Text Box" ); //LET'S CONSOLE LOG, IT GOES UP AND DOWN WITH THE KEYSTROKES
+  })
+  $scope.changeName = function() {
+  $scope.name2= $scope.name2 + "$";
+  $scope.updated++; 
+  console.log($scope.updated + " button");
+  }
+  
+});
+$scope.$watchCollection for arrays of objects
+

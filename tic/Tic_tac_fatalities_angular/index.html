@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Your description goes here">
+    <meta name="keywords" content="one, two, three">
+  
+    <title>Tic Tac Fatalities</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js.script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+</head>
+    <header>
+     <h1>Tic Tac Fatalities</h1> 
+
+    </header>
+  <body x-ng-app="" x-ng-init="rows = [[1,2,4], [8,16,32,], [64,128,256] ];">
+   
+  <!--the track by index for x in rows is needed so if the array are not unique, it still works-->
+        <div class="row" x-ng-repeat="x in rows track by $index">
+          <div x-ng-repeat="col in x track by $index" x-ng-click="rows[$parent.$index][$index]='X';">
+      {{col}} 
+          </div>
+        </div>
+    </body> 
+</html>

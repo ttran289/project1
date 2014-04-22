@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html x-ng-app="tptApp">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body x-ng-controller="TptController">
+	<h1>Tic Tac Fatalities</h1>
+	<div id="board">
+		<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click = "makeMove($index);">
+			{{c}}
+		</div>
+	</div>
+	<div class ="X_score">X's score</div>
+	
+	<div class ="Y_score">Y's Score</div>
+	
+	<!--<input x-ng-class ="{button : true, buttonHidden:gameOver ==false, buttonAppear : gameOver == true}" type= "button" value = "reset" x-ng-click = "reset()"/>-->
+</body>
+</html>
