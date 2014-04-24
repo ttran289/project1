@@ -2,7 +2,6 @@ var tptApp = angular.module ('tptApp', []);
 tptApp.controller('TptController', function ($scope){ 
 	//Creates a 1D array
 	$scope.cells = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
-	//$scope.firstGame = true;
   $scope.counter = 0;
   $scope.incrementer = 0;
   $scope.firstGame = true;
@@ -11,14 +10,13 @@ tptApp.controller('TptController', function ($scope){
   $scope.gameOver=false;
   var player;
 
-	
-  //$scope.winNum = [[0,1,2], [3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[2,4,6],[0,4,8]];
 $scope.newGame = function(softReset){
   $scope.incrementer <= 9;
   for (var i = 0; i < 9; i++){
     $scope.cells[i] = " "
     $scope.incrementer = 0;
     $scope.gameOver = false;
+    $scope.counter = 0;
   }
   
 };
@@ -30,6 +28,7 @@ $scope.newSet = function (hardreset){
     $scope.player1 = 3;
     $scope.player2 = 3;
     $scope.gameOver = false;
+    $scope.counter = 0;
   }
 };
 $scope.makeMove = function (cellIndex){
@@ -57,7 +56,6 @@ $scope.makeMove = function (cellIndex){
           } 
         }
 $scope.checkwin = function (cellIndex){
-  //for ( i = 0; i<= $scope.cells.length;i++){
     if (($scope.cells[0] == $scope.cells[1] && $scope.cells[1] == $scope.cells[2] && $scope.cells[0]) != ' ' ||
         ($scope.cells[3] == $scope.cells[4] && $scope.cells[4] == $scope.cells[5] && $scope.cells[3]) != ' ' ||
         ($scope.cells[6] == $scope.cells[7] && $scope.cells[7] == $scope.cells[8] && $scope.cells[6]) != ' ' ||
@@ -79,15 +77,11 @@ $scope.checkwin = function (cellIndex){
             $scope.player1--;
             break;
         }
-          // $scope.newGame();
                }  
                else if ($scope.cells[0] != " " && $scope.cells[1] != " " && $scope.cells[2] != " " && $scope.cells[3] != " " && $scope.cells[4] != " " && $scope.cells[5] != " " && $scope.cells[6] != " " && $scope.cells[7] != " " && $scope.cells[8] != " ") {
                     console.log("tie game yo!!!")
-                    // $scope.newGame();
-                    
                     
                };  
-            //}
       }
 
 });

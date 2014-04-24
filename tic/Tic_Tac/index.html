@@ -9,10 +9,17 @@
 <body x-ng-controller="TptController">
 	<h1>Tic Tac <span style="color:red">Fatalities<span></h1>
 
-	<div class ="X_score" x-ng-model="player1">{{player1}}<div id="X_health"></div>
+	<div class ="X_score" x-ng-model="player1"><div id="X_fullhealth" ng-hide ="player1<3"></div>
+
+	<div id="notfull" ng-show="player1<3" ng-hide="player1<2"></div>
+	<div id="dead" ng-show="player1<1"></div>
+	<div id="nohealth"></div>
 	</div>
 	
-	<div class ="O_score" x-ng-model="player2">{{player2}}<div id="O_fullhealth"></div>
+	<div class ="O_score" x-ng-model="player2"><div id="O_fullhealth" ng-hide ="player2<3"></div>
+	<div id="thirdfull" ng-hide ="player2<2"></div>
+	<div id="neardead" ng-hide ="player2<1"></div>
+	<div id="die"></div>
 	</div>
 	<div id="board">
 		<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click = "makeMove($index);">
