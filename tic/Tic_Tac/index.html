@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html x-ng-app="tptApp">
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script src="js/script.js"></script>
 </head>
 <body x-ng-controller="TptController">
-	<h1>Tic Tac Fatalities</h1>
+	<h1>Tic Tac <span style="color:red">Fatalities<span></h1>
+
+	<div class ="X_score" x-ng-model="player1">{{player1}}<div id="X_health"></div>
+	</div>
+	
+	<div class ="O_score" x-ng-model="player2">{{player2}}<div id="O_fullhealth"></div>
+	</div>
 	<div id="board">
 		<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click = "makeMove($index);">
 			{{c}}
 		</div>
+	<button x-ng-click ="newGame()">Newgame</button>
+	<button x-ng-click ="newSet()">Newset</button>	
+
 	</div>
-	<div class ="X_score">X's score</div>
-	
-	<div class ="Y_score">Y's Score</div>
 	
 	<!--<input x-ng-class ="{button : true, buttonHidden:gameOver ==false, buttonAppear : gameOver == true}" type= "button" value = "reset" x-ng-click = "reset()"/>-->
 </body>

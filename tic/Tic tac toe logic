@@ -70,3 +70,30 @@ app.controller('MainCtrl', function($scope) {
 });
 $scope.$watchCollection for arrays of objects
 
+
+Here's an interesting way to dynamically check for a win in both the vertical and horizontal directions simulatneously:
+for(i = 0; i < 3; ++i)
+		{
+			// Left column
+			if($scope.board[0+i] != null &&
+				$scope.board[0+i]==$scope.board[3+i] &&
+				$scope.board[3+i]== $scope.board[6+i])
+			{
+				console.log("win - vertical")
+			}
+			if($scope.board[0+(i*3)] != null &&
+				$scope.board[0]==$scope.board[1] &&
+			  $scope.board[1]== $scope.board[2])
+			{
+				console.log("win - horizontal");
+			}
+		}
+
+if ($scope.cells[0] === $scope.cells[1] && $scope.cells[1] === $scope.cells[2] && $scope.cells[2]===$scope.cells[0] != " " ||
+		$scope.cells[3] === $scope.cells[4] && $scope.cells[4] === $scope.cells[5] && $scope.cells[5] === $scope.cells[0] != " " ||
+		$scope.cells[6] === $scope.cells[7] && $scope.cells[7] === $scope.cells[8] && $scope.cells[8] === $scope.cells[6] != " " ||
+		$scope.cells[0] === $scope.cells[3] && $scope.cells[3] === $scope.cells[6] && $scope.cells[6] === $scope.cells[0] != " " ||
+		$scope.cells[1] === $scope.cells[4] && $scope.cells[4] === $scope.cells[7] && $scope.cells[7] === $scope.cells[1] != " " ||
+		$scope.cells[2] === $scope.cells[5] && $scope.cells[5] === $scope.cells[8] && $scope.cells[8] === $scope.cells[2] != " " ||
+		$scope.cells[0] === $scope.cells[4] && $scope.cells[4] === $scope.cells[8] && $scope.cells[8] === $scope.cells[0] != " " ||
+		$scope.cells[2] === $scope.cells[4] && $scope.cells[4] === $scope.cells[6] && $scope.cells[6] === $scope.cells[2] != " ")
